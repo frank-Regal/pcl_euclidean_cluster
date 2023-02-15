@@ -45,5 +45,5 @@ add_dependencies(cluster_extractor ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_
 target_link_libraries(cluster_extractor ${catkin_LIBRARIES})
 
 add_executable(cluster_finder src/cluster_finder.cpp)
-target_link_libraries(cluster_finder ${catkin_LIBRARIES})
+target_link_libraries(cluster_finder ${catkin_LIBRARIES} ${PCL_LIBRARIES} -lpcl_filters)
 
