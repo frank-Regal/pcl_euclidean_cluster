@@ -42,8 +42,11 @@ include_directories(
 
 add_executable(cluster_extractor src/cluster_extractor.cpp)
 add_dependencies(cluster_extractor ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
-target_link_libraries(cluster_extractor ${catkin_LIBRARIES})
+target_link_libraries(cluster_extractor ${catkin_LIBRARIES} ${PCL_LIBRARIES} -lpcl_filters)
 
 add_executable(cluster_finder src/cluster_finder.cpp)
 target_link_libraries(cluster_finder ${catkin_LIBRARIES} ${PCL_LIBRARIES} -lpcl_filters)
+
+add_executable(conditional_cluster_finder src/conditional_cluster_finder.cpp)
+target_link_libraries(conditional_cluster_finder ${catkin_LIBRARIES} ${PCL_LIBRARIES} -lpcl_filters)
 
