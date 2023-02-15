@@ -14,6 +14,8 @@ find_package(catkin REQUIRED COMPONENTS
   sensor_msgs
   pcl_ros
   pcl_conversions
+  tf2_ros
+  geometry_msgs
 )
 
 find_package(PCL REQUIRED)
@@ -25,7 +27,7 @@ add_definitions(${PCL_DEFINITIONS})
 catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES pcl_euclidean_cluster
-  CATKIN_DEPENDS roscpp rospy std_msgs sensor_msgs pcl_ros pcl_conversions
+  CATKIN_DEPENDS roscpp rospy std_msgs sensor_msgs pcl_ros pcl_conversions tf2_ros geometry_msgs
 #  DEPENDS system_lib
 )
 
